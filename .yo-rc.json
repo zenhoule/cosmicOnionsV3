@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "fr.inti.cosmiconions",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "monolith",
+    "baseName": "cosmiconions",
+    "packageName": "fr.inti.cosmiconions",
+    "packageFolder": "fr/inti/cosmiconions",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NzUyNGVlNGJlMGIyYTFhYTdlYzVkMjM3MzVlZWMwNzk3NTU1N2Y0ZTI2ZjU1ZjVhMTJlMjQ3ZTViNzI1MDMyY2IyNTIxNTcxMTE1MWY5OGZhOWFjNTQxNDVmN2I4NzgzOWFmN2E5MDhhNzY4OWQzMjkxMDU0NjY0OGFkZDk3Yjk=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "lumen",
+    "clientThemeVariant": "dark",
+    "creationTimestamp": 1581347434259,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": ["fr", "en", "it", "ja", "tr"],
+    "blueprints": []
+  }
+}

@@ -1,0 +1,11 @@
+version: '2'
+services:
+  cosmiconions-postgresql:
+    image: postgres:11.6
+    # volumes:
+    #     - ~/volumes/jhipster/cosmiconions/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=cosmiconions
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
