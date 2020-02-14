@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Donation court-métrage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<h1 align="center">Aidez-nous à financer un court-métrage sur l'histoire de <br/> la communauté Cosmic Onions</h1>
+<br/>
+
+<p  align="center"> <img src="img/tournage.jpg" alt="Photo de tournage" /></p>
+<br/>
+
+<button type="button" class="btn btn-primary btn-lg btn-block">DONATION</button>
+<br/>
+<p align="center">Participez au financement d'un film retraçant <b>l'histoire palpitante de la communauté Cosmic Onions</b> : de ses premiers fondements avec Saint Pépino jusqu'à son apogée et son rayonnement dans la société.
+<br/>
+    La genèse de la communauté vous sera contée.
+<br/>
+    Vous voyagerez au travers de récits  et paroles de membres, qui sont autant le reflet de l'histoire, de sa création et du quotidien de la communauté.
+<br/>
+    Ce court-métrage a pour volonté de transmettre la bonne parole cosmique, de la partager au plus grand nombre.
+<br/>
+    Pour réaliser ce film, il  est nécessaire de récolter 100.000 euros.
+</p>
+
+<p>
+<h3>Le concept </h3>
+L'argent collecté sera utilisé pour réaliser le documentaire et couvrir les différents postes de dépenses.
+<br/>
+Nous souhaitons travailler avec du matériel professionnel afin d'avoir un rendu d'image de qualité.
+A ce jour, l'équipe de tournage est constituée et le scénario est fait.</p>
+
+Vos précieux dons participeront à réaliser le court-métrage et pour ce faire nous les utiliserons pour :
+<br/>
+<ul>
+    <li>Acheter le matériel vidéo, son et lumière, </li>
+    <li>Acheter des accessoires de décor,</li>
+    <li>Nourrir les membres de l'équipe,</li>
+    <li>Payer les techniciens,</li>
+    <li>Payer l'inscription au "Short Film Corner" de Cannes,</li>
+    <li>...</li>
+</ul>
+</p>
+
+</body>
+</html>
