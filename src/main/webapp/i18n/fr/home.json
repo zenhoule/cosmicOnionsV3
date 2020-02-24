@@ -1,17 +1,11 @@
 {
   "home": {
-    "title": "Bienvenue, Java Hipster !",
-    "subtitle": "Ceci est votre page d'accueil",
-    "logged": {
-      "message": "Vous êtes connecté en tant que \"{{username}}\"."
-    },
-    "question": "Si vous avez des questions à propos de JHipster :",
+    "title": "Crowdfunding Cosmic Onion",
+    "subtitle": "By les Radins de la Galaxie",
+
+    "question": "Des questions ?",
     "link": {
-      "homepage": "Page d'accueil de JHipster",
-      "stackoverflow": "JHipster sur Stack Overflow",
-      "bugtracker": "JHipster bug tracker",
-      "chat": "JHipster public chat room",
-      "follow": "Suivez @jhipster sur Twitter"
+      "homepage": "Contact"
     },
     "like": "Si vous aimez JHipster, donnez nous une étoile sur",
     "github": "GitHub "
