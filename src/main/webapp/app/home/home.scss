@@ -6,7 +6,15 @@ Main page styles
   display: inline-block;
   width: 347px;
   height: 497px;
-  background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
+  background: url('../../content/images/logoOnions.jpg') no-repeat center top;
+  background-size: contain;
+}
+
+.eglise {
+  display: inline-block;
+  width: 347px;
+  height: 497px;
+  background: url('../../content/images/egliseCassee.jpg') no-repeat center top;
   background-size: contain;
 }
 
