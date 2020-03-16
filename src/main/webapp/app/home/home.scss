@@ -5,9 +5,10 @@ Main page styles
 .hipster {
   display: inline-block;
   width: 100%;
-  height: 500px;
+  height: 400px;
   background: url('../../content/images/logocs.png') no-repeat center top;
   background-size: 100%;
+  margin-left: 170%;
 }
 
 .eglise {
@@ -28,4 +29,26 @@ Main page styles
     background: url('../../content/images/logocs.png') no-repeat center top;
     background-size: contain;
   }
+}
+
+.table2 {
+  width: 800px;
+  margin-left: 90%;
+  margin-right: 10%;
+  border-radius: 10px;
+}
+
+td,
+th,
+tr {
+  width: 800px;
+  background-color: #04194f;
+  margin-left: 90%;
+  margin-right: 10%;
+  border-radius: 10px;
+  color: white;
+}
+
+.button {
+  margin_left: 100%;
 }

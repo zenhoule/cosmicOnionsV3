@@ -7,6 +7,7 @@ import { CosmiconionsCoreModule } from 'app/core/core.module';
 import { CosmiconionsAppRoutingModule } from './app-routing.module';
 import { CosmiconionsHomeModule } from './home/home.module';
 import { CosmiconionsEntityModule } from './entities/entity.module';
+import { CosmiconionsAppContactModule } from './contact/contact.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -21,6 +22,7 @@ import { ErrorComponent } from './layouts/error/error.component';
     CosmiconionsSharedModule,
     CosmiconionsCoreModule,
     CosmiconionsHomeModule,
+    CosmiconionsAppContactModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     CosmiconionsEntityModule,
     CosmiconionsAppRoutingModule
