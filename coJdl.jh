@@ -1,0 +1,42 @@
+entity Projet {
+	description TextBlob,
+    photo ImageBlob,
+    objectif Float,
+    soldeCours Float,
+    nbJoursRestant Integer
+
+}
+
+entity LeType {
+	nom String
+}
+
+entity Message {
+	message TextBlob
+}
+
+entity Don {
+	montant Float
+}
+
+entity Goodies {
+	nom String,
+    photo ImageBlob,
+    palier Float
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+		Projet{don} to Don{projet},
+    Projet{message} to Message{projet},
+    LeType{projet} to Projet{leType}
+
+}
+
+relationship ManyToOne {
+Message{user} to User,
+Don{user} to User,
+Goodies{user} to User,
+Projet{user} to User
+}
