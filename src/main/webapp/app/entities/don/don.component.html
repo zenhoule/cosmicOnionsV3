@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="cosmiconionsApp.don.home.title">Dons</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-don" [routerLink]="['/don/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="cosmiconionsApp.don.home.createLabel">
+            Create a new Don
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="dons?.length === 0">
+        <span jhiTranslate="cosmiconionsApp.don.home.notFound">No dons found</span>
+    </div>
+    <div class="table-responsive" *ngIf="dons?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.don.montant">Montant</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.don.user">User</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.don.projet">Projet</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let don of dons ;trackBy: trackId">
+                <td><a [routerLink]="['/don', don.id, 'view' ]">{{don.id}}</a></td>
+                <td>{{don.montant}}</td>
+                <td>
+                    {{don.user?.id}}
+                </td>
+                <td>
+                    <div *ngIf="don.projet">
+                        <a [routerLink]="['/projet', don.projet?.id, 'view' ]" >{{don.projet?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/don', don.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/don', don.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(don)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

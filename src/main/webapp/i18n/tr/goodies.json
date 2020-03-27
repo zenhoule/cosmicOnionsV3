@@ -1,0 +1,25 @@
+{
+  "cosmiconionsApp": {
+    "goodies": {
+      "home": {
+        "title": "Goodies",
+        "createLabel": "Create a new Goodies",
+        "createOrEditLabel": "Create or edit a Goodies",
+        "notFound": "No Goodies found"
+      },
+      "created": "A new Goodies is created with identifier {{ param }}",
+      "updated": "A Goodies is updated with identifier {{ param }}",
+      "deleted": "A Goodies is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Goodies {{ id }}?"
+      },
+      "detail": {
+        "title": "Goodies"
+      },
+      "nom": "Nom",
+      "photo": "Photo",
+      "palier": "Palier",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="projet">
+            <h2><span jhiTranslate="cosmiconionsApp.projet.detail.title">Projet</span> {{projet.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cosmiconionsApp.projet.description">Description</span></dt>
+                <dd>
+                    <span>{{projet.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="cosmiconionsApp.projet.photo">Photo</span></dt>
+                <dd>
+                    <div *ngIf="projet.photo">
+                        <a (click)="openFile(projet.photoContentType!, projet.photo)">
+                            <img [src]="'data:' + projet.photoContentType + ';base64,' + projet.photo" style="max-width: 100%;" alt="projet image"/>
+                        </a>
+                        {{projet.photoContentType}}, {{byteSize(projet.photo)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cosmiconionsApp.projet.objectif">Objectif</span></dt>
+                <dd>
+                    <span>{{projet.objectif}}</span>
+                </dd>
+                <dt><span jhiTranslate="cosmiconionsApp.projet.soldeCours">Solde Cours</span></dt>
+                <dd>
+                    <span>{{projet.soldeCours}}</span>
+                </dd>
+                <dt><span jhiTranslate="cosmiconionsApp.projet.nbJoursRestant">Nb Jours Restant</span></dt>
+                <dd>
+                    <span>{{projet.nbJoursRestant}}</span>
+                </dd>
+                <dt><span jhiTranslate="cosmiconionsApp.projet.user">User</span></dt>
+                <dd>
+                    {{projet.user?.id}}
+                </dd>
+                <dt><span jhiTranslate="cosmiconionsApp.projet.leType">Le Type</span></dt>
+                <dd>
+                    <div *ngIf="projet.leType">
+                        <a [routerLink]="['/le-type', projet.leType?.id, 'view']">{{projet.leType?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/projet', projet.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

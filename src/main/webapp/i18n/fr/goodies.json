@@ -1,0 +1,25 @@
+{
+  "cosmiconionsApp": {
+    "goodies": {
+      "home": {
+        "title": "Goodies",
+        "createLabel": "Créer un nouveau Goodies",
+        "createOrEditLabel": "Créer ou éditer un Goodies",
+        "notFound": "Aucun Goodies trouvé"
+      },
+      "created": "Un nouveau Goodies a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Goodies avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Goodies avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Goodies {{ id }} ?"
+      },
+      "detail": {
+        "title": "Goodies"
+      },
+      "nom": "Nom",
+      "photo": "Photo",
+      "palier": "Palier",
+      "user": "User"
+    }
+  }
+}

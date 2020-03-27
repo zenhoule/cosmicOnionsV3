@@ -1,0 +1,24 @@
+{
+  "cosmiconionsApp": {
+    "don": {
+      "home": {
+        "title": "Dons",
+        "createLabel": "Don を追加",
+        "createOrEditLabel": "Donを追加または編集",
+        "notFound": "No Dons found"
+      },
+      "created": "A new Don is created with identifier {{ param }}",
+      "updated": "A Don is updated with identifier {{ param }}",
+      "deleted": "A Don is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Don {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Don"
+      },
+      "montant": "Montant",
+      "user": "User",
+      "projet": "Projet"
+    }
+  }
+}

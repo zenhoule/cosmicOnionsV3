@@ -1,0 +1,65 @@
+{
+    "name": "Projet",
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "photo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "objectif",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "soldeCours",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "nbJoursRestant",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "don",
+            "otherEntityRelationshipName": "projet",
+            "relationshipName": "don"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "message",
+            "otherEntityRelationshipName": "projet",
+            "relationshipName": "message"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "projet",
+            "relationshipName": "user",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "leType",
+            "otherEntityRelationshipName": "projet",
+            "relationshipName": "leType",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200327130857",
+    "entityTableName": "projet",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

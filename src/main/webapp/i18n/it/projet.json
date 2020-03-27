@@ -1,0 +1,30 @@
+{
+  "cosmiconionsApp": {
+    "projet": {
+      "home": {
+        "title": "Projets",
+        "createLabel": "Genera un nuovo Projet",
+        "createOrEditLabel": "Genera o modifica un Projet",
+        "notFound": "No Projets found"
+      },
+      "created": "&Egrave; stato generato un nuovo Projet con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Projet identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Projet con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Projet {{ id }}?"
+      },
+      "detail": {
+        "title": "Projet"
+      },
+      "description": "Description",
+      "photo": "Photo",
+      "objectif": "Objectif",
+      "soldeCours": "Solde Cours",
+      "nbJoursRestant": "Nb Jours Restant",
+      "don": "Don",
+      "message": "Message",
+      "user": "User",
+      "leType": "Le Type"
+    }
+  }
+}

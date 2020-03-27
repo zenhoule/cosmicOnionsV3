@@ -1,0 +1,30 @@
+{
+  "cosmiconionsApp": {
+    "projet": {
+      "home": {
+        "title": "Projets",
+        "createLabel": "Projet を追加",
+        "createOrEditLabel": "Projetを追加または編集",
+        "notFound": "No Projets found"
+      },
+      "created": "A new Projet is created with identifier {{ param }}",
+      "updated": "A Projet is updated with identifier {{ param }}",
+      "deleted": "A Projet is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Projet {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Projet"
+      },
+      "description": "Description",
+      "photo": "Photo",
+      "objectif": "Objectif",
+      "soldeCours": "Solde Cours",
+      "nbJoursRestant": "Nb Jours Restant",
+      "don": "Don",
+      "message": "Message",
+      "user": "User",
+      "leType": "Le Type"
+    }
+  }
+}

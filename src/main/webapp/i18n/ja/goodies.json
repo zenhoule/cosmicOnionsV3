@@ -1,0 +1,25 @@
+{
+  "cosmiconionsApp": {
+    "goodies": {
+      "home": {
+        "title": "Goodies",
+        "createLabel": "Goodies を追加",
+        "createOrEditLabel": "Goodiesを追加または編集",
+        "notFound": "No Goodies found"
+      },
+      "created": "A new Goodies is created with identifier {{ param }}",
+      "updated": "A Goodies is updated with identifier {{ param }}",
+      "deleted": "A Goodies is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Goodies {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Goodies"
+      },
+      "nom": "Nom",
+      "photo": "Photo",
+      "palier": "Palier",
+      "user": "User"
+    }
+  }
+}
