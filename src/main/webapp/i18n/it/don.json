@@ -1,0 +1,24 @@
+{
+  "cosmiconionsApp": {
+    "don": {
+      "home": {
+        "title": "Dons",
+        "createLabel": "Genera un nuovo Don",
+        "createOrEditLabel": "Genera o modifica un Don",
+        "notFound": "No Dons found"
+      },
+      "created": "&Egrave; stato generato un nuovo Don con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Don identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Don con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Don {{ id }}?"
+      },
+      "detail": {
+        "title": "Don"
+      },
+      "montant": "Montant",
+      "user": "User",
+      "projet": "Projet"
+    }
+  }
+}

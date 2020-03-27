@@ -1,0 +1,68 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="cosmiconionsApp.goodies.home.title">Goodies</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-goodies" [routerLink]="['/goodies/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="cosmiconionsApp.goodies.home.createLabel">
+            Create a new Goodies
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="goodies?.length === 0">
+        <span jhiTranslate="cosmiconionsApp.goodies.home.notFound">No goodies found</span>
+    </div>
+    <div class="table-responsive" *ngIf="goodies?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.goodies.nom">Nom</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.goodies.photo">Photo</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.goodies.palier">Palier</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.goodies.user">User</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let goodies of goodies ;trackBy: trackId">
+                <td><a [routerLink]="['/goodies', goodies.id, 'view' ]">{{goodies.id}}</a></td>
+                <td>{{goodies.nom}}</td>
+                <td>
+                    <a *ngIf="goodies.photo" (click)="openFile(goodies.photoContentType, goodies.photo)">
+                        <img [src]="'data:' + goodies.photoContentType + ';base64,' + goodies.photo" style="max-height: 30px;" alt="goodies image"/>
+                    </a>
+                    <span *ngIf="goodies.photo">{{goodies.photoContentType}}, {{byteSize(goodies.photo)}}</span>
+                </td>
+                <td>{{goodies.palier}}</td>
+                <td>
+                    {{goodies.user?.id}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/goodies', goodies.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/goodies', goodies.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(goodies)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

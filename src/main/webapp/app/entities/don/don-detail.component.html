@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="don">
+            <h2><span jhiTranslate="cosmiconionsApp.don.detail.title">Don</span> {{don.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cosmiconionsApp.don.montant">Montant</span></dt>
+                <dd>
+                    <span>{{don.montant}}</span>
+                </dd>
+                <dt><span jhiTranslate="cosmiconionsApp.don.user">User</span></dt>
+                <dd>
+                    {{don.user?.id}}
+                </dd>
+                <dt><span jhiTranslate="cosmiconionsApp.don.projet">Projet</span></dt>
+                <dd>
+                    <div *ngIf="don.projet">
+                        <a [routerLink]="['/projet', don.projet?.id, 'view']">{{don.projet?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/don', don.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

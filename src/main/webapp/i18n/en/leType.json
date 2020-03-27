@@ -1,0 +1,23 @@
+{
+  "cosmiconionsApp": {
+    "leType": {
+      "home": {
+        "title": "Le Types",
+        "createLabel": "Create a new Le Type",
+        "createOrEditLabel": "Create or edit a Le Type",
+        "notFound": "No Le Types found"
+      },
+      "created": "A new Le Type is created with identifier {{ param }}",
+      "updated": "A Le Type is updated with identifier {{ param }}",
+      "deleted": "A Le Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Le Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Le Type"
+      },
+      "nom": "Nom",
+      "projet": "Projet"
+    }
+  }
+}

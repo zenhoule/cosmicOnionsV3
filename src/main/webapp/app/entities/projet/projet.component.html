@@ -1,0 +1,78 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="cosmiconionsApp.projet.home.title">Projets</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-projet" [routerLink]="['/projet/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="cosmiconionsApp.projet.home.createLabel">
+            Create a new Projet
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="projets?.length === 0">
+        <span jhiTranslate="cosmiconionsApp.projet.home.notFound">No projets found</span>
+    </div>
+    <div class="table-responsive" *ngIf="projets?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.description">Description</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.photo">Photo</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.objectif">Objectif</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.soldeCours">Solde Cours</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.nbJoursRestant">Nb Jours Restant</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.user">User</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.leType">Le Type</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let projet of projets ;trackBy: trackId">
+                <td><a [routerLink]="['/projet', projet.id, 'view' ]">{{projet.id}}</a></td>
+                <td>{{projet.description}}</td>
+                <td>
+                    <a *ngIf="projet.photo" (click)="openFile(projet.photoContentType, projet.photo)">
+                        <img [src]="'data:' + projet.photoContentType + ';base64,' + projet.photo" style="max-height: 30px;" alt="projet image"/>
+                    </a>
+                    <span *ngIf="projet.photo">{{projet.photoContentType}}, {{byteSize(projet.photo)}}</span>
+                </td>
+                <td>{{projet.objectif}}</td>
+                <td>{{projet.soldeCours}}</td>
+                <td>{{projet.nbJoursRestant}}</td>
+                <td>
+                    {{projet.user?.id}}
+                </td>
+                <td>
+                    <div *ngIf="projet.leType">
+                        <a [routerLink]="['/le-type', projet.leType?.id, 'view' ]" >{{projet.leType?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/projet', projet.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/projet', projet.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(projet)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
