@@ -13,6 +13,7 @@
         "message": "Message",
         "don": "Don",
         "goodies": "Goodies",
+        "categorie": "Categorie",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

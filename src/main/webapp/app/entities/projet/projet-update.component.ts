@@ -12,10 +12,10 @@ import { ProjetService } from './projet.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
 import { IUser } from 'app/core/user/user.model';
 import { UserService } from 'app/core/user/user.service';
-import { ILeType } from 'app/shared/model/le-type.model';
-import { LeTypeService } from 'app/entities/le-type/le-type.service';
+import { ICategorie } from 'app/shared/model/categorie.model';
+import { CategorieService } from 'app/entities/categorie/categorie.service';
 
-type SelectableEntity = IUser | ILeType;
+type SelectableEntity = IUser | ICategorie;
 
 @Component({
   selector: 'jhi-projet-update',
@@ -26,18 +26,20 @@ export class ProjetUpdateComponent implements OnInit {
 
   users: IUser[] = [];
 
-  letypes: ILeType[] = [];
+  categories: ICategorie[] = [];
 
   editForm = this.fb.group({
     id: [],
     description: [],
     photo: [],
     photoContentType: [],
+    video: [],
+    videoContentType: [],
     objectif: [],
     soldeCours: [],
     nbJoursRestant: [],
     user: [],
-    leType: []
+    categorie: []
   });
 
   constructor(
@@ -45,7 +47,7 @@ export class ProjetUpdateComponent implements OnInit {
     protected eventManager: JhiEventManager,
     protected projetService: ProjetService,
     protected userService: UserService,
-    protected leTypeService: LeTypeService,
+    protected categorieService: CategorieService,
     protected elementRef: ElementRef,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
@@ -64,14 +66,14 @@ export class ProjetUpdateComponent implements OnInit {
         )
         .subscribe((resBody: IUser[]) => (this.users = resBody));
 
-      this.leTypeService
+      this.categorieService
         .query()
         .pipe(
-          map((res: HttpResponse<ILeType[]>) => {
+          map((res: HttpResponse<ICategorie[]>) => {
             return res.body ? res.body : [];
           })
         )
-        .subscribe((resBody: ILeType[]) => (this.letypes = resBody));
+        .subscribe((resBody: ICategorie[]) => (this.categories = resBody));
     });
   }
 
@@ -81,11 +83,13 @@ export class ProjetUpdateComponent implements OnInit {
       description: projet.description,
       photo: projet.photo,
       photoContentType: projet.photoContentType,
+      video: projet.video,
+      videoContentType: projet.videoContentType,
       objectif: projet.objectif,
       soldeCours: projet.soldeCours,
       nbJoursRestant: projet.nbJoursRestant,
       user: projet.user,
-      leType: projet.leType
+      categorie: projet.categorie
     });
   }
 
@@ -136,11 +140,13 @@ export class ProjetUpdateComponent implements OnInit {
       description: this.editForm.get(['description'])!.value,
       photoContentType: this.editForm.get(['photoContentType'])!.value,
       photo: this.editForm.get(['photo'])!.value,
+      videoContentType: this.editForm.get(['videoContentType'])!.value,
+      video: this.editForm.get(['video'])!.value,
       objectif: this.editForm.get(['objectif'])!.value,
       soldeCours: this.editForm.get(['soldeCours'])!.value,
       nbJoursRestant: this.editForm.get(['nbJoursRestant'])!.value,
       user: this.editForm.get(['user'])!.value,
-      leType: this.editForm.get(['leType'])!.value
+      categorie: this.editForm.get(['categorie'])!.value
     };
   }
 

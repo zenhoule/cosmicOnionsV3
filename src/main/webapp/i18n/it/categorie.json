@@ -1,0 +1,23 @@
+{
+  "cosmiconionsApp": {
+    "categorie": {
+      "home": {
+        "title": "Categories",
+        "createLabel": "Genera un nuovo Categorie",
+        "createOrEditLabel": "Genera o modifica un Categorie",
+        "notFound": "No Categories found"
+      },
+      "created": "&Egrave; stato generato un nuovo Categorie con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Categorie identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Categorie con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Categorie {{ id }}?"
+      },
+      "detail": {
+        "title": "Categorie"
+      },
+      "nom": "Nom",
+      "projet": "Projet"
+    }
+  }
+}

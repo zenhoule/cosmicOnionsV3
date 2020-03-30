@@ -20,7 +20,7 @@ describe('Service Tests', () => {
       service = injector.get(ProjetService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Projet(0, 'AAAAAAA', 'image/png', 'AAAAAAA', 0, 0, 0);
+      elemDefault = new Projet(0, 'AAAAAAA', 'image/png', 'AAAAAAA', 'image/png', 'AAAAAAA', 0, 0, 0);
     });
 
     describe('Service methods', () => {
@@ -58,6 +58,7 @@ describe('Service Tests', () => {
           {
             description: 'BBBBBB',
             photo: 'BBBBBB',
+            video: 'BBBBBB',
             objectif: 1,
             soldeCours: 1,
             nbJoursRestant: 1
@@ -80,6 +81,7 @@ describe('Service Tests', () => {
           {
             description: 'BBBBBB',
             photo: 'BBBBBB',
+            video: 'BBBBBB',
             objectif: 1,
             soldeCours: 1,
             nbJoursRestant: 1

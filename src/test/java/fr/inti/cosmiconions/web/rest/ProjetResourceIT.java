@@ -42,6 +42,11 @@ public class ProjetResourceIT {
     private static final String DEFAULT_PHOTO_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_PHOTO_CONTENT_TYPE = "image/png";
 
+    private static final byte[] DEFAULT_VIDEO = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_VIDEO = TestUtil.createByteArray(1, "1");
+    private static final String DEFAULT_VIDEO_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_VIDEO_CONTENT_TYPE = "image/png";
+
     private static final Float DEFAULT_OBJECTIF = 1F;
     private static final Float UPDATED_OBJECTIF = 2F;
 
@@ -96,6 +101,8 @@ public class ProjetResourceIT {
             .description(DEFAULT_DESCRIPTION)
             .photo(DEFAULT_PHOTO)
             .photoContentType(DEFAULT_PHOTO_CONTENT_TYPE)
+            .video(DEFAULT_VIDEO)
+            .videoContentType(DEFAULT_VIDEO_CONTENT_TYPE)
             .objectif(DEFAULT_OBJECTIF)
             .soldeCours(DEFAULT_SOLDE_COURS)
             .nbJoursRestant(DEFAULT_NB_JOURS_RESTANT);
@@ -112,6 +119,8 @@ public class ProjetResourceIT {
             .description(UPDATED_DESCRIPTION)
             .photo(UPDATED_PHOTO)
             .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
+            .video(UPDATED_VIDEO)
+            .videoContentType(UPDATED_VIDEO_CONTENT_TYPE)
             .objectif(UPDATED_OBJECTIF)
             .soldeCours(UPDATED_SOLDE_COURS)
             .nbJoursRestant(UPDATED_NB_JOURS_RESTANT);
@@ -141,6 +150,8 @@ public class ProjetResourceIT {
         assertThat(testProjet.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testProjet.getPhoto()).isEqualTo(DEFAULT_PHOTO);
         assertThat(testProjet.getPhotoContentType()).isEqualTo(DEFAULT_PHOTO_CONTENT_TYPE);
+        assertThat(testProjet.getVideo()).isEqualTo(DEFAULT_VIDEO);
+        assertThat(testProjet.getVideoContentType()).isEqualTo(DEFAULT_VIDEO_CONTENT_TYPE);
         assertThat(testProjet.getObjectif()).isEqualTo(DEFAULT_OBJECTIF);
         assertThat(testProjet.getSoldeCours()).isEqualTo(DEFAULT_SOLDE_COURS);
         assertThat(testProjet.getNbJoursRestant()).isEqualTo(DEFAULT_NB_JOURS_RESTANT);
@@ -180,6 +191,8 @@ public class ProjetResourceIT {
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
             .andExpect(jsonPath("$.[*].photoContentType").value(hasItem(DEFAULT_PHOTO_CONTENT_TYPE)))
             .andExpect(jsonPath("$.[*].photo").value(hasItem(Base64Utils.encodeToString(DEFAULT_PHOTO))))
+            .andExpect(jsonPath("$.[*].videoContentType").value(hasItem(DEFAULT_VIDEO_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].video").value(hasItem(Base64Utils.encodeToString(DEFAULT_VIDEO))))
             .andExpect(jsonPath("$.[*].objectif").value(hasItem(DEFAULT_OBJECTIF.doubleValue())))
             .andExpect(jsonPath("$.[*].soldeCours").value(hasItem(DEFAULT_SOLDE_COURS.doubleValue())))
             .andExpect(jsonPath("$.[*].nbJoursRestant").value(hasItem(DEFAULT_NB_JOURS_RESTANT)));
@@ -199,6 +212,8 @@ public class ProjetResourceIT {
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
             .andExpect(jsonPath("$.photoContentType").value(DEFAULT_PHOTO_CONTENT_TYPE))
             .andExpect(jsonPath("$.photo").value(Base64Utils.encodeToString(DEFAULT_PHOTO)))
+            .andExpect(jsonPath("$.videoContentType").value(DEFAULT_VIDEO_CONTENT_TYPE))
+            .andExpect(jsonPath("$.video").value(Base64Utils.encodeToString(DEFAULT_VIDEO)))
             .andExpect(jsonPath("$.objectif").value(DEFAULT_OBJECTIF.doubleValue()))
             .andExpect(jsonPath("$.soldeCours").value(DEFAULT_SOLDE_COURS.doubleValue()))
             .andExpect(jsonPath("$.nbJoursRestant").value(DEFAULT_NB_JOURS_RESTANT));
@@ -228,6 +243,8 @@ public class ProjetResourceIT {
             .description(UPDATED_DESCRIPTION)
             .photo(UPDATED_PHOTO)
             .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
+            .video(UPDATED_VIDEO)
+            .videoContentType(UPDATED_VIDEO_CONTENT_TYPE)
             .objectif(UPDATED_OBJECTIF)
             .soldeCours(UPDATED_SOLDE_COURS)
             .nbJoursRestant(UPDATED_NB_JOURS_RESTANT);
@@ -244,6 +261,8 @@ public class ProjetResourceIT {
         assertThat(testProjet.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testProjet.getPhoto()).isEqualTo(UPDATED_PHOTO);
         assertThat(testProjet.getPhotoContentType()).isEqualTo(UPDATED_PHOTO_CONTENT_TYPE);
+        assertThat(testProjet.getVideo()).isEqualTo(UPDATED_VIDEO);
+        assertThat(testProjet.getVideoContentType()).isEqualTo(UPDATED_VIDEO_CONTENT_TYPE);
         assertThat(testProjet.getObjectif()).isEqualTo(UPDATED_OBJECTIF);
         assertThat(testProjet.getSoldeCours()).isEqualTo(UPDATED_SOLDE_COURS);
         assertThat(testProjet.getNbJoursRestant()).isEqualTo(UPDATED_NB_JOURS_RESTANT);

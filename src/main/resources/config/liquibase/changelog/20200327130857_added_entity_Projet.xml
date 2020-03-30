@@ -24,6 +24,12 @@
             <column name="photo_content_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="video" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="video_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="objectif" type="${floatType}">
                 <constraints nullable="true" />
             </column>
@@ -36,7 +42,7 @@
             <column name="user_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="le_type_id" type="bigint">
+            <column name="categorie_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
@@ -65,6 +71,8 @@
             <column name="description" type="clob"/>
             <column name="photo" type="blob"/>
             <column name="photo_content_type" type="string"/>
+            <column name="video" type="blob"/>
+            <column name="video_content_type" type="string"/>
             <column name="objectif" type="numeric"/>
             <column name="solde_cours" type="numeric"/>
             <column name="nb_jours_restant" type="numeric"/>
