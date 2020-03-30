@@ -12,6 +12,11 @@
             "fieldTypeBlobContent": "image"
         },
         {
+            "fieldName": "video",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
             "fieldName": "objectif",
             "fieldType": "Float"
         },
@@ -46,10 +51,10 @@
         },
         {
             "relationshipType": "many-to-one",
-            "otherEntityName": "leType",
+            "otherEntityName": "categorie",
             "otherEntityRelationshipName": "projet",
-            "relationshipName": "leType",
-            "otherEntityField": "id"
+            "relationshipName": "categorie",
+            "otherEntityField": "nom"
         }
     ],
     "changelogDate": "20200327130857",

@@ -18,6 +18,13 @@
                         {{projet.photoContentType}}, {{byteSize(projet.photo)}}
                     </div>
                 </dd>
+                <dt><span jhiTranslate="cosmiconionsApp.projet.video">Video</span></dt>
+                <dd>
+                    <div *ngIf="projet.video">
+                        <a (click)="openFile(projet.videoContentType!, projet.video)" jhiTranslate="entity.action.open">open</a>
+                        {{projet.videoContentType}}, {{byteSize(projet.video)}}
+                    </div>
+                </dd>
                 <dt><span jhiTranslate="cosmiconionsApp.projet.objectif">Objectif</span></dt>
                 <dd>
                     <span>{{projet.objectif}}</span>
@@ -34,10 +41,10 @@
                 <dd>
                     {{projet.user?.id}}
                 </dd>
-                <dt><span jhiTranslate="cosmiconionsApp.projet.leType">Le Type</span></dt>
+                <dt><span jhiTranslate="cosmiconionsApp.projet.categorie">Categorie</span></dt>
                 <dd>
-                    <div *ngIf="projet.leType">
-                        <a [routerLink]="['/le-type', projet.leType?.id, 'view']">{{projet.leType?.id}}</a>
+                    <div *ngIf="projet.categorie">
+                        <a [routerLink]="['/categorie', projet.categorie?.id, 'view']">{{projet.categorie?.nom}}</a>
                     </div>
                 </dd>
             </dl>

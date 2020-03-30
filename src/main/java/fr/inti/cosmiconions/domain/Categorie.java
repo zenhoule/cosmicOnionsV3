@@ -9,12 +9,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * A LeType.
+ * A Categorie.
  */
 @Entity
-@Table(name = "le_type")
+@Table(name = "categorie")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class LeType implements Serializable {
+public class Categorie implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -26,7 +26,7 @@ public class LeType implements Serializable {
     @Column(name = "nom")
     private String nom;
 
-    @OneToMany(mappedBy = "leType")
+    @OneToMany(mappedBy = "categorie")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Projet> projets = new HashSet<>();
 
@@ -43,7 +43,7 @@ public class LeType implements Serializable {
         return nom;
     }
 
-    public LeType nom(String nom) {
+    public Categorie nom(String nom) {
         this.nom = nom;
         return this;
     }
@@ -56,20 +56,20 @@ public class LeType implements Serializable {
         return projets;
     }
 
-    public LeType projets(Set<Projet> projets) {
+    public Categorie projets(Set<Projet> projets) {
         this.projets = projets;
         return this;
     }
 
-    public LeType addProjet(Projet projet) {
+    public Categorie addProjet(Projet projet) {
         this.projets.add(projet);
-        projet.setLeType(this);
+        projet.setCategorie(this);
         return this;
     }
 
-    public LeType removeProjet(Projet projet) {
+    public Categorie removeProjet(Projet projet) {
         this.projets.remove(projet);
-        projet.setLeType(null);
+        projet.setCategorie(null);
         return this;
     }
 
@@ -83,10 +83,10 @@ public class LeType implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof LeType)) {
+        if (!(o instanceof Categorie)) {
             return false;
         }
-        return id != null && id.equals(((LeType) o).id);
+        return id != null && id.equals(((Categorie) o).id);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class LeType implements Serializable {
 
     @Override
     public String toString() {
-        return "LeType{" +
+        return "Categorie{" +
             "id=" + getId() +
             ", nom='" + getNom() + "'" +
             "}";

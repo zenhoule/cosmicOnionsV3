@@ -1,11 +1,11 @@
 import { IProjet } from 'app/shared/model/projet.model';
 
-export interface ILeType {
+export interface ICategorie {
   id?: number;
   nom?: string;
   projets?: IProjet[];
 }
 
-export class LeType implements ILeType {
+export class Categorie implements ICategorie {
   constructor(public id?: number, public nom?: string, public projets?: IProjet[]) {}
 }

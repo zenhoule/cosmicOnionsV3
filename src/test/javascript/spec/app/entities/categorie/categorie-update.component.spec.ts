@@ -4,34 +4,34 @@ import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
 import { CosmiconionsTestModule } from '../../../test.module';
-import { LeTypeUpdateComponent } from 'app/entities/le-type/le-type-update.component';
-import { LeTypeService } from 'app/entities/le-type/le-type.service';
-import { LeType } from 'app/shared/model/le-type.model';
+import { CategorieUpdateComponent } from 'app/entities/categorie/categorie-update.component';
+import { CategorieService } from 'app/entities/categorie/categorie.service';
+import { Categorie } from 'app/shared/model/categorie.model';
 
 describe('Component Tests', () => {
-  describe('LeType Management Update Component', () => {
-    let comp: LeTypeUpdateComponent;
-    let fixture: ComponentFixture<LeTypeUpdateComponent>;
-    let service: LeTypeService;
+  describe('Categorie Management Update Component', () => {
+    let comp: CategorieUpdateComponent;
+    let fixture: ComponentFixture<CategorieUpdateComponent>;
+    let service: CategorieService;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [CosmiconionsTestModule],
-        declarations: [LeTypeUpdateComponent],
+        declarations: [CategorieUpdateComponent],
         providers: [FormBuilder]
       })
-        .overrideTemplate(LeTypeUpdateComponent, '')
+        .overrideTemplate(CategorieUpdateComponent, '')
         .compileComponents();
 
-      fixture = TestBed.createComponent(LeTypeUpdateComponent);
+      fixture = TestBed.createComponent(CategorieUpdateComponent);
       comp = fixture.componentInstance;
-      service = fixture.debugElement.injector.get(LeTypeService);
+      service = fixture.debugElement.injector.get(CategorieService);
     });
 
     describe('save', () => {
       it('Should call update service on save for existing entity', fakeAsync(() => {
         // GIVEN
-        const entity = new LeType(123);
+        const entity = new Categorie(123);
         spyOn(service, 'update').and.returnValue(of(new HttpResponse({ body: entity })));
         comp.updateForm(entity);
         // WHEN
@@ -45,7 +45,7 @@ describe('Component Tests', () => {
 
       it('Should call create service on save for new entity', fakeAsync(() => {
         // GIVEN
-        const entity = new LeType();
+        const entity = new Categorie();
         spyOn(service, 'create').and.returnValue(of(new HttpResponse({ body: entity })));
         comp.updateForm(entity);
         // WHEN

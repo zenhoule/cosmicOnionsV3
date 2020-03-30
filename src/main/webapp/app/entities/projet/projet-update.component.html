@@ -32,6 +32,24 @@
                            formControlName="photoContentType" />
                 </div>
                 <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cosmiconionsApp.projet.video" for="field_video">Video</label>
+                    <div>
+                        <div *ngIf="editForm.get('video')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('videoContentType')!.value, editForm.get('video')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{editForm.get('videoContentType')!.value}}, {{byteSize(editForm.get('video')!.value)}}</span>
+                            <button type="button" (click)="editForm.patchValue({video: null});editForm.patchValue({videoContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_video" (change)="setFileData($event, 'video', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="video" id="field_video"
+                           formControlName="video"/>
+                    <input type="hidden" class="form-control" name="videoContentType" id="field_videoContentType"
+                           formControlName="videoContentType" />
+                </div>
+                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="cosmiconionsApp.projet.objectif" for="field_objectif">Objectif</label>
                     <input type="number" class="form-control" name="objectif" id="field_objectif"
                            formControlName="objectif"/>
@@ -55,10 +73,10 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="cosmiconionsApp.projet.leType" for="field_leType">Le Type</label>
-                    <select class="form-control" id="field_leType" name="leType" formControlName="leType">
+                    <label class="form-control-label" jhiTranslate="cosmiconionsApp.projet.categorie" for="field_categorie">Categorie</label>
+                    <select class="form-control" id="field_categorie" name="categorie" formControlName="categorie">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="leTypeOption.id === editForm.get('leType')!.value?.id ? editForm.get('leType')!.value : leTypeOption" *ngFor="let leTypeOption of letypes; trackBy: trackById">{{leTypeOption.id}}</option>
+                        <option [ngValue]="categorieOption.id === editForm.get('categorie')!.value?.id ? editForm.get('categorie')!.value : categorieOption" *ngFor="let categorieOption of categories; trackBy: trackById">{{categorieOption.nom}}</option>
                     </select>
                 </div>
             </div>

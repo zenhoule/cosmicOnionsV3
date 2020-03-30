@@ -1,5 +1,5 @@
 {
-    "name": "LeType",
+    "name": "Categorie",
     "fields": [
         {
             "fieldName": "nom",
@@ -10,12 +10,12 @@
         {
             "relationshipType": "one-to-many",
             "otherEntityName": "projet",
-            "otherEntityRelationshipName": "leType",
+            "otherEntityRelationshipName": "categorie",
             "relationshipName": "projet"
         }
     ],
-    "changelogDate": "20200327130858",
-    "entityTableName": "le_type",
+    "changelogDate": "20200327142743",
+    "entityTableName": "categorie",
     "dto": "no",
     "pagination": "no",
     "service": "no",

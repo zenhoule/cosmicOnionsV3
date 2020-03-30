@@ -21,11 +21,12 @@
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.description">Description</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.photo">Photo</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.video">Video</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.objectif">Objectif</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.soldeCours">Solde Cours</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.nbJoursRestant">Nb Jours Restant</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.user">User</span></th>
-            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.leType">Le Type</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.categorie">Categorie</span></th>
             <th scope="col"></th>
             </tr>
             </thead>
@@ -39,6 +40,10 @@
                     </a>
                     <span *ngIf="projet.photo">{{projet.photoContentType}}, {{byteSize(projet.photo)}}</span>
                 </td>
+                <td>
+                    <a *ngIf="projet.video" (click)="openFile(projet.videoContentType, projet.video)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="projet.video">{{projet.videoContentType}}, {{byteSize(projet.video)}}</span>
+                </td>
                 <td>{{projet.objectif}}</td>
                 <td>{{projet.soldeCours}}</td>
                 <td>{{projet.nbJoursRestant}}</td>
@@ -46,8 +51,8 @@
                     {{projet.user?.id}}
                 </td>
                 <td>
-                    <div *ngIf="projet.leType">
-                        <a [routerLink]="['/le-type', projet.leType?.id, 'view' ]" >{{projet.leType?.id}}</a>
+                    <div *ngIf="projet.categorie">
+                        <a [routerLink]="['/categorie', projet.categorie?.id, 'view' ]" >{{projet.categorie?.nom}}</a>
                     </div>
                 </td>
                 <td class="text-right">

@@ -37,6 +37,13 @@ public class Projet implements Serializable {
     @Column(name = "photo_content_type")
     private String photoContentType;
 
+    @Lob
+    @Column(name = "video")
+    private byte[] video;
+
+    @Column(name = "video_content_type")
+    private String videoContentType;
+
     @Column(name = "objectif")
     private Float objectif;
 
@@ -60,7 +67,7 @@ public class Projet implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("projets")
-    private LeType leType;
+    private Categorie categorie;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -108,6 +115,32 @@ public class Projet implements Serializable {
 
     public void setPhotoContentType(String photoContentType) {
         this.photoContentType = photoContentType;
+    }
+
+    public byte[] getVideo() {
+        return video;
+    }
+
+    public Projet video(byte[] video) {
+        this.video = video;
+        return this;
+    }
+
+    public void setVideo(byte[] video) {
+        this.video = video;
+    }
+
+    public String getVideoContentType() {
+        return videoContentType;
+    }
+
+    public Projet videoContentType(String videoContentType) {
+        this.videoContentType = videoContentType;
+        return this;
+    }
+
+    public void setVideoContentType(String videoContentType) {
+        this.videoContentType = videoContentType;
     }
 
     public Float getObjectif() {
@@ -212,17 +245,17 @@ public class Projet implements Serializable {
         this.user = user;
     }
 
-    public LeType getLeType() {
-        return leType;
+    public Categorie getCategorie() {
+        return categorie;
     }
 
-    public Projet leType(LeType leType) {
-        this.leType = leType;
+    public Projet categorie(Categorie categorie) {
+        this.categorie = categorie;
         return this;
     }
 
-    public void setLeType(LeType leType) {
-        this.leType = leType;
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -249,6 +282,8 @@ public class Projet implements Serializable {
             ", description='" + getDescription() + "'" +
             ", photo='" + getPhoto() + "'" +
             ", photoContentType='" + getPhotoContentType() + "'" +
+            ", video='" + getVideo() + "'" +
+            ", videoContentType='" + getVideoContentType() + "'" +
             ", objectif=" + getObjectif() +
             ", soldeCours=" + getSoldeCours() +
             ", nbJoursRestant=" + getNbJoursRestant() +

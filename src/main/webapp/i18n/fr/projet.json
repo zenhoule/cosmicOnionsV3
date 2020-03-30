@@ -18,13 +18,14 @@
       },
       "description": "Description",
       "photo": "Photo",
+      "video": "Video",
       "objectif": "Objectif",
       "soldeCours": "Solde Cours",
       "nbJoursRestant": "Nb Jours Restant",
       "don": "Don",
       "message": "Message",
       "user": "User",
-      "leType": "Le Type"
+      "categorie": "Categorie"
     }
   }
 }

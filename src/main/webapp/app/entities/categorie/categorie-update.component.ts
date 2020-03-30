@@ -5,14 +5,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { ILeType, LeType } from 'app/shared/model/le-type.model';
-import { LeTypeService } from './le-type.service';
+import { ICategorie, Categorie } from 'app/shared/model/categorie.model';
+import { CategorieService } from './categorie.service';
 
 @Component({
-  selector: 'jhi-le-type-update',
-  templateUrl: './le-type-update.component.html'
+  selector: 'jhi-categorie-update',
+  templateUrl: './categorie-update.component.html'
 })
-export class LeTypeUpdateComponent implements OnInit {
+export class CategorieUpdateComponent implements OnInit {
   isSaving = false;
 
   editForm = this.fb.group({
@@ -20,18 +20,18 @@ export class LeTypeUpdateComponent implements OnInit {
     nom: []
   });
 
-  constructor(protected leTypeService: LeTypeService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(protected categorieService: CategorieService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe(({ leType }) => {
-      this.updateForm(leType);
+    this.activatedRoute.data.subscribe(({ categorie }) => {
+      this.updateForm(categorie);
     });
   }
 
-  updateForm(leType: ILeType): void {
+  updateForm(categorie: ICategorie): void {
     this.editForm.patchValue({
-      id: leType.id,
-      nom: leType.nom
+      id: categorie.id,
+      nom: categorie.nom
     });
   }
 
@@ -41,23 +41,23 @@ export class LeTypeUpdateComponent implements OnInit {
 
   save(): void {
     this.isSaving = true;
-    const leType = this.createFromForm();
-    if (leType.id !== undefined) {
-      this.subscribeToSaveResponse(this.leTypeService.update(leType));
+    const categorie = this.createFromForm();
+    if (categorie.id !== undefined) {
+      this.subscribeToSaveResponse(this.categorieService.update(categorie));
     } else {
-      this.subscribeToSaveResponse(this.leTypeService.create(leType));
+      this.subscribeToSaveResponse(this.categorieService.create(categorie));
     }
   }
 
-  private createFromForm(): ILeType {
+  private createFromForm(): ICategorie {
     return {
-      ...new LeType(),
+      ...new Categorie(),
       id: this.editForm.get(['id'])!.value,
       nom: this.editForm.get(['nom'])!.value
     };
   }
 
-  protected subscribeToSaveResponse(result: Observable<HttpResponse<ILeType>>): void {
+  protected subscribeToSaveResponse(result: Observable<HttpResponse<ICategorie>>): void {
     result.subscribe(
       () => this.onSaveSuccess(),
       () => this.onSaveError()

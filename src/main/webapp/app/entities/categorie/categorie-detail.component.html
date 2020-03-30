@@ -1,13 +1,13 @@
 <div class="row justify-content-center">
     <div class="col-8">
-        <div *ngIf="leType">
-            <h2><span jhiTranslate="cosmiconionsApp.leType.detail.title">Le Type</span> {{leType.id}}</h2>
+        <div *ngIf="categorie">
+            <h2><span jhiTranslate="cosmiconionsApp.categorie.detail.title">Categorie</span> {{categorie.id}}</h2>
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="cosmiconionsApp.leType.nom">Nom</span></dt>
+                <dt><span jhiTranslate="cosmiconionsApp.categorie.nom">Nom</span></dt>
                 <dd>
-                    <span>{{leType.nom}}</span>
+                    <span>{{categorie.nom}}</span>
                 </dd>
             </dl>
 
@@ -18,7 +18,7 @@
             </button>
 
             <button type="button"
-                    [routerLink]="['/le-type', leType.id, 'edit']"
+                    [routerLink]="['/categorie', categorie.id, 'edit']"
                     class="btn btn-primary">
                 <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
             </button>

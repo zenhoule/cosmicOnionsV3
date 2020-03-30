@@ -3,28 +3,28 @@ import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
 import { CosmiconionsTestModule } from '../../../test.module';
-import { LeTypeComponent } from 'app/entities/le-type/le-type.component';
-import { LeTypeService } from 'app/entities/le-type/le-type.service';
-import { LeType } from 'app/shared/model/le-type.model';
+import { CategorieComponent } from 'app/entities/categorie/categorie.component';
+import { CategorieService } from 'app/entities/categorie/categorie.service';
+import { Categorie } from 'app/shared/model/categorie.model';
 
 describe('Component Tests', () => {
-  describe('LeType Management Component', () => {
-    let comp: LeTypeComponent;
-    let fixture: ComponentFixture<LeTypeComponent>;
-    let service: LeTypeService;
+  describe('Categorie Management Component', () => {
+    let comp: CategorieComponent;
+    let fixture: ComponentFixture<CategorieComponent>;
+    let service: CategorieService;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [CosmiconionsTestModule],
-        declarations: [LeTypeComponent],
+        declarations: [CategorieComponent],
         providers: []
       })
-        .overrideTemplate(LeTypeComponent, '')
+        .overrideTemplate(CategorieComponent, '')
         .compileComponents();
 
-      fixture = TestBed.createComponent(LeTypeComponent);
+      fixture = TestBed.createComponent(CategorieComponent);
       comp = fixture.componentInstance;
-      service = fixture.debugElement.injector.get(LeTypeService);
+      service = fixture.debugElement.injector.get(CategorieService);
     });
 
     it('Should call load all on init', () => {
@@ -33,7 +33,7 @@ describe('Component Tests', () => {
       spyOn(service, 'query').and.returnValue(
         of(
           new HttpResponse({
-            body: [new LeType(123)],
+            body: [new Categorie(123)],
             headers
           })
         )
@@ -44,7 +44,7 @@ describe('Component Tests', () => {
 
       // THEN
       expect(service.query).toHaveBeenCalled();
-      expect(comp.leTypes && comp.leTypes[0]).toEqual(jasmine.objectContaining({ id: 123 }));
+      expect(comp.categories && comp.categories[0]).toEqual(jasmine.objectContaining({ id: 123 }));
     });
   });
 });

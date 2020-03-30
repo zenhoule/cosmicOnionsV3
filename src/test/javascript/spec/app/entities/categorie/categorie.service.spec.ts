@@ -1,26 +1,26 @@
 import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { take, map } from 'rxjs/operators';
-import { LeTypeService } from 'app/entities/le-type/le-type.service';
-import { ILeType, LeType } from 'app/shared/model/le-type.model';
+import { CategorieService } from 'app/entities/categorie/categorie.service';
+import { ICategorie, Categorie } from 'app/shared/model/categorie.model';
 
 describe('Service Tests', () => {
-  describe('LeType Service', () => {
+  describe('Categorie Service', () => {
     let injector: TestBed;
-    let service: LeTypeService;
+    let service: CategorieService;
     let httpMock: HttpTestingController;
-    let elemDefault: ILeType;
-    let expectedResult: ILeType | ILeType[] | boolean | null;
+    let elemDefault: ICategorie;
+    let expectedResult: ICategorie | ICategorie[] | boolean | null;
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [HttpClientTestingModule]
       });
       expectedResult = null;
       injector = getTestBed();
-      service = injector.get(LeTypeService);
+      service = injector.get(CategorieService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new LeType(0, 'AAAAAAA');
+      elemDefault = new Categorie(0, 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -36,7 +36,7 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject(elemDefault);
       });
 
-      it('should create a LeType', () => {
+      it('should create a Categorie', () => {
         const returnedFromService = Object.assign(
           {
             id: 0
@@ -45,7 +45,7 @@ describe('Service Tests', () => {
         );
         const expected = Object.assign({}, returnedFromService);
         service
-          .create(new LeType())
+          .create(new Categorie())
           .pipe(take(1))
           .subscribe(resp => (expectedResult = resp.body));
         const req = httpMock.expectOne({ method: 'POST' });
@@ -53,7 +53,7 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject(expected);
       });
 
-      it('should update a LeType', () => {
+      it('should update a Categorie', () => {
         const returnedFromService = Object.assign(
           {
             nom: 'BBBBBB'
@@ -71,7 +71,7 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject(expected);
       });
 
-      it('should return a list of LeType', () => {
+      it('should return a list of Categorie', () => {
         const returnedFromService = Object.assign(
           {
             nom: 'BBBBBB'
@@ -92,7 +92,7 @@ describe('Service Tests', () => {
         expect(expectedResult).toContainEqual(expected);
       });
 
-      it('should delete a LeType', () => {
+      it('should delete a Categorie', () => {
         service.delete(123).subscribe(resp => (expectedResult = resp.ok));
 
         const req = httpMock.expectOne({ method: 'DELETE' });

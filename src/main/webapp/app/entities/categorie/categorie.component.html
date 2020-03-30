@@ -1,47 +1,47 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="cosmiconionsApp.leType.home.title">Le Types</span>
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-le-type" [routerLink]="['/le-type/new']">
+        <span jhiTranslate="cosmiconionsApp.categorie.home.title">Categories</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-categorie" [routerLink]="['/categorie/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="cosmiconionsApp.leType.home.createLabel">
-            Create a new Le Type
+            <span  jhiTranslate="cosmiconionsApp.categorie.home.createLabel">
+            Create a new Categorie
             </span>
         </button>
     </h2>
     <jhi-alert-error></jhi-alert-error>
     <jhi-alert></jhi-alert>
     <br/>
-    <div class="alert alert-warning" *ngIf="leTypes?.length === 0">
-        <span jhiTranslate="cosmiconionsApp.leType.home.notFound">No leTypes found</span>
+    <div class="alert alert-warning" *ngIf="categories?.length === 0">
+        <span jhiTranslate="cosmiconionsApp.categorie.home.notFound">No categories found</span>
     </div>
-    <div class="table-responsive" *ngIf="leTypes?.length > 0">
+    <div class="table-responsive" *ngIf="categories?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="cosmiconionsApp.leType.nom">Nom</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.categorie.nom">Nom</span></th>
             <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let leType of leTypes ;trackBy: trackId">
-                <td><a [routerLink]="['/le-type', leType.id, 'view' ]">{{leType.id}}</a></td>
-                <td>{{leType.nom}}</td>
+            <tr *ngFor="let categorie of categories ;trackBy: trackId">
+                <td><a [routerLink]="['/categorie', categorie.id, 'view' ]">{{categorie.id}}</a></td>
+                <td>{{categorie.nom}}</td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"
-                                [routerLink]="['/le-type', leType.id, 'view' ]"
+                                [routerLink]="['/categorie', categorie.id, 'view' ]"
                                 class="btn btn-info btn-sm">
                             <fa-icon [icon]="'eye'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
                         </button>
                         <button type="submit"
-                                [routerLink]="['/le-type', leType.id, 'edit']"
+                                [routerLink]="['/categorie', categorie.id, 'edit']"
                                 class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
-                        <button type="submit" (click)="delete(leType)"
+                        <button type="submit" (click)="delete(categorie)"
                                 class="btn btn-danger btn-sm">
                             <fa-icon [icon]="'times'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>

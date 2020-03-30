@@ -1,0 +1,23 @@
+{
+  "cosmiconionsApp": {
+    "categorie": {
+      "home": {
+        "title": "Categories",
+        "createLabel": "Categorie を追加",
+        "createOrEditLabel": "Categorieを追加または編集",
+        "notFound": "No Categories found"
+      },
+      "created": "A new Categorie is created with identifier {{ param }}",
+      "updated": "A Categorie is updated with identifier {{ param }}",
+      "deleted": "A Categorie is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Categorie {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Categorie"
+      },
+      "nom": "Nom",
+      "projet": "Projet"
+    }
+  }
+}

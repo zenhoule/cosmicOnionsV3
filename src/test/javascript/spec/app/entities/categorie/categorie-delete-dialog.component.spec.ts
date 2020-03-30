@@ -6,27 +6,27 @@ import { JhiEventManager } from 'ng-jhipster';
 import { CosmiconionsTestModule } from '../../../test.module';
 import { MockEventManager } from '../../../helpers/mock-event-manager.service';
 import { MockActiveModal } from '../../../helpers/mock-active-modal.service';
-import { LeTypeDeleteDialogComponent } from 'app/entities/le-type/le-type-delete-dialog.component';
-import { LeTypeService } from 'app/entities/le-type/le-type.service';
+import { CategorieDeleteDialogComponent } from 'app/entities/categorie/categorie-delete-dialog.component';
+import { CategorieService } from 'app/entities/categorie/categorie.service';
 
 describe('Component Tests', () => {
-  describe('LeType Management Delete Component', () => {
-    let comp: LeTypeDeleteDialogComponent;
-    let fixture: ComponentFixture<LeTypeDeleteDialogComponent>;
-    let service: LeTypeService;
+  describe('Categorie Management Delete Component', () => {
+    let comp: CategorieDeleteDialogComponent;
+    let fixture: ComponentFixture<CategorieDeleteDialogComponent>;
+    let service: CategorieService;
     let mockEventManager: MockEventManager;
     let mockActiveModal: MockActiveModal;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [CosmiconionsTestModule],
-        declarations: [LeTypeDeleteDialogComponent]
+        declarations: [CategorieDeleteDialogComponent]
       })
-        .overrideTemplate(LeTypeDeleteDialogComponent, '')
+        .overrideTemplate(CategorieDeleteDialogComponent, '')
         .compileComponents();
-      fixture = TestBed.createComponent(LeTypeDeleteDialogComponent);
+      fixture = TestBed.createComponent(CategorieDeleteDialogComponent);
       comp = fixture.componentInstance;
-      service = fixture.debugElement.injector.get(LeTypeService);
+      service = fixture.debugElement.injector.get(CategorieService);
       mockEventManager = TestBed.get(JhiEventManager);
       mockActiveModal = TestBed.get(NgbActiveModal);
     });
