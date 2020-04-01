@@ -200,6 +200,25 @@ ui bootstrap tweaks
   margin-left: 150px;
 }
 
+/* ==========================================================================
+Boutons
+========================================================================== */
+
+.btnDon {
+  content: '';
+  background: url('../../content/images/donation.png');
+  padding: 10px 20px;
+  font-size: 75px;
+  font-family: 'montserrat';
+  cursor: pointer;
+  margin: 10px;
+  position: absolute;
+}
+
+/* ==========================================================================
+Images
+========================================================================== */
+
 .eglisecassee {
   position: relative;
   z-index: 2;
@@ -254,4 +273,111 @@ ui bootstrap tweaks
   background: url('../../content/images/donation.png') no-repeat left;
   background-size: contain;
   padding: 0;
+}
+
+.nomimageEnteteOnion {
+  position: relative;
+  z-index: 2;
+  left: 0px;
+  display: inline-block;
+  width: 2500px;
+  height: 1000px;
+  background: url('../../content/images/enteteONION.png') no-repeat left;
+  background-size: contain;
+  padding: 0;
+  margin-top: -100px;
+}
+
+.ADD-goodies {
+  position: relative;
+  z-index: 2;
+  left: 0px;
+  display: inline-block;
+  width: 100%;
+  height: 640px;
+  background: url('../../content/images/ADD-goodies.png') no-repeat left;
+  background-size: contain;
+  padding: 0;
+}
+
+.ADD-goodies-2 {
+  position: relative;
+  z-index: 2;
+  left: 0px;
+  display: inline-block;
+  width: 100%;
+  height: 640px;
+  background: url('../../content/images/ADD-goodies-2.png') no-repeat left;
+  background-size: contain;
+  padding: 0;
+  margin-top: -100px;
+}
+
+.zainoul {
+  position: relative;
+  z-index: 3;
+  left: 0px;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: url('../../content/images/zainoul.jpg') no-repeat left;
+  background-size: contain;
+  padding: 0;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+.chloe {
+  position: relative;
+  z-index: 3;
+  left: 0px;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: url('../../content/images/chloe.jpg') no-repeat left;
+  background-size: contain;
+  padding: 0;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.hugo {
+  position: relative;
+  z-index: 3;
+  left: 0px;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: url('../../content/images/hugo.jpg') no-repeat left;
+  background-size: contain;
+  padding: 0;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.elisa {
+  position: relative;
+  z-index: 3;
+  left: 0px;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: url('../../content/images/elisa.jpg') no-repeat left;
+  background-size: contain;
+  padding: 0;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.thibault {
+  position: relative;
+  z-index: 3;
+  left: 0px;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: url('../../content/images/thibault.jpg') no-repeat left;
+  background-size: contain;
+  padding: 0;
+  margin-right: 50px;
+  margin-left: 50px;
 }
