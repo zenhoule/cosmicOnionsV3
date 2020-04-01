@@ -7,15 +7,27 @@
 Bootstrap tweaks
 ===============================================================*/
 
-h1,
-h2,
-h3,
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+h3 {
+  color: white;
+}
 h4 {
   font-weight: 300;
+  color: white;
+}
+
+p {
+  color: white;
 }
 
 body {
-  background-color: #04194f;
+  background-color: #35363a;
   font-family: 'Candara', sans-serif;
   font-size: 17px;
 }
@@ -57,7 +69,7 @@ Generic styles
 }
 
 .pad {
-  padding: 10px;
+  padding: 20px;
 }
 
 .w-40 {
@@ -79,8 +91,16 @@ Generic styles
 }
 
 .footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  /* Copier seulement ces lignes de code pour le FOOTER, mais le garder comme CLASSE cf : https://www.webtolosa.com/2017/09/21/comment-avoir-un-footer-colle-en-bas-de-page/ */
+  position: relative;
+  bottom: 0; /* on le colle en bas */
+  width: 100%;
+  height: auto; /* Hauteur du pied de page */
+  /* + ajouter cette ligne de code (elle permet de fixer le pied de page en bas en adaptant à la taille du contenu)*/
+  clear: both;
+  /* personnalisation*/
   color: white;
+  background-color: #03123a;
 }
 
 .hand,
@@ -170,3 +190,57 @@ ui bootstrap tweaks
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+.block_main {
+  background-color: #35363a;
+}
+
+.textaligne {
+  text-align: left;
+  margin-left: 150px;
+}
+
+.eglisecassee {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  background: url('../../content/images/egliseCasse2.jpg') no-repeat left;
+  background-size: contain;
+  padding: 0;
+}
+
+.eglise {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  background: url('../../content/images/eglisefinal.png') no-repeat left;
+  background-size: contain;
+  padding: 0;
+}
+
+.ecole {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  background: url('../../content/images/ecole.png') no-repeat left;
+  background-size: contain;
+  padding: 0;
+  margin-left: 150px;
+}
+
+.ecolefinal {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  background: url('../../content/images/ecolefinal.png') no-repeat left;
+  background-size: contain;
+  padding: 0;
+}
