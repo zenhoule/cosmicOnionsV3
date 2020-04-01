@@ -244,3 +244,14 @@ ui bootstrap tweaks
   background-size: contain;
   padding: 0;
 }
+
+.donation {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  background: url('../../content/images/donation.png') no-repeat left;
+  background-size: contain;
+  padding: 0;
+}
