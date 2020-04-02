@@ -54,6 +54,8 @@ public class DonResource {
             throw new BadRequestAlertException("A new don cannot already have an ID", ENTITY_NAME, "idexists");
         }
         Don result = donRepository.save(don);
+        if (don.getProjet() != null)
+        	don.getProjet().setSoldeCours(don.getProjet().getSoldeCours()+don.getMontant());
         return ResponseEntity.created(new URI("/api/dons/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -75,6 +77,8 @@ public class DonResource {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
         Don result = donRepository.save(don);
+        if (don.getProjet() != null)
+        	don.getProjet().setSoldeCours(don.getProjet().getSoldeCours()+don.getMontant());
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, don.getId().toString()))
             .body(result);
