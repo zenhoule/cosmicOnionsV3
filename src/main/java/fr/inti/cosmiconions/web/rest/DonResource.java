@@ -2,6 +2,7 @@ package fr.inti.cosmiconions.web.rest;
 
 import fr.inti.cosmiconions.domain.Don;
 import fr.inti.cosmiconions.repository.DonRepository;
+import fr.inti.cosmiconions.repository.ProjetRepository;
 import fr.inti.cosmiconions.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
@@ -35,10 +36,19 @@ public class DonResource {
     private String applicationName;
 
     private final DonRepository donRepository;
+    private final ProjetRepository projetRepository;
 
-    public DonResource(DonRepository donRepository) {
+    /* public DonResource(DonRepository donRepository) {
         this.donRepository = donRepository;
-    }
+    } */
+    
+    public DonResource(DonRepository donRepository, ProjetRepository projetRepository) {
+		super();
+		this.donRepository = donRepository;
+		this.projetRepository = projetRepository;
+	}
+    
+    
 
     /**
      * {@code POST  /dons} : Create a new don.
@@ -54,14 +64,16 @@ public class DonResource {
             throw new BadRequestAlertException("A new don cannot already have an ID", ENTITY_NAME, "idexists");
         }
         Don result = donRepository.save(don);
-        if (don.getProjet() != null)
+        if (don.getProjet() != null) {
         	don.getProjet().setSoldeCours(don.getProjet().getSoldeCours()+don.getMontant());
+        	projetRepository.save(don.getProjet());
+        }
         return ResponseEntity.created(new URI("/api/dons/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
-    /**
+	/**
      * {@code PUT  /dons} : Updates an existing don.
      *
      * @param don the don to update.
@@ -77,8 +89,10 @@ public class DonResource {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
         Don result = donRepository.save(don);
-        if (don.getProjet() != null)
+        if (don.getProjet() != null) {
         	don.getProjet().setSoldeCours(don.getProjet().getSoldeCours()+don.getMontant());
+        	projetRepository.save(don.getProjet());
+        }
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, don.getId().toString()))
             .body(result);

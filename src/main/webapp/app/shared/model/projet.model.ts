@@ -5,6 +5,7 @@ import { ICategorie } from 'app/shared/model/categorie.model';
 
 export interface IProjet {
   id?: number;
+  nom?: string;
   description?: any;
   photoContentType?: string;
   photo?: any;
@@ -22,6 +23,7 @@ export interface IProjet {
 export class Projet implements IProjet {
   constructor(
     public id?: number,
+    public nom?: string,
     public description?: any,
     public photoContentType?: string,
     public photo?: any,

@@ -19,13 +19,14 @@
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.nom">Nom</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.description">Description</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.photo">Photo</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.video">Video</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.objectif">Objectif</span></th>
-            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.soldeCours">Solde Cours</span></th>
-            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.nbJoursRestant">Nb Jours Restant</span></th>
-            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.user">User</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.soldeCours">Solde actuel</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.nbJoursRestant">Nombre jours restant</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.user">Créateur</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.categorie">Categorie</span></th>
             <th scope="col"></th>
             </tr>
@@ -33,6 +34,7 @@
             <tbody>
             <tr *ngFor="let projet of projets ;trackBy: trackId">
                 <td><a [routerLink]="['/projet', projet.id, 'view' ]">{{projet.id}}</a></td>
+                <td>{{projet.nom}}</td>
                 <td>{{projet.description}}</td>
                 <td>
                     <a *ngIf="projet.photo" (click)="openFile(projet.photoContentType, projet.photo)">
@@ -48,7 +50,7 @@
                 <td>{{projet.soldeCours}}</td>
                 <td>{{projet.nbJoursRestant}}</td>
                 <td>
-                    {{projet.user?.id}}
+                    {{projet.user?.login}}
                 </td>
                 <td>
                     <div *ngIf="projet.categorie">

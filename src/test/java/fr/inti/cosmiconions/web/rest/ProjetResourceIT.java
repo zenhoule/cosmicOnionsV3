@@ -34,6 +34,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = CosmiconionsApp.class)
 public class ProjetResourceIT {
 
+    private static final String DEFAULT_NOM = "AAAAAAAAAA";
+    private static final String UPDATED_NOM = "BBBBBBBBBB";
+
     private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
@@ -98,6 +101,7 @@ public class ProjetResourceIT {
      */
     public static Projet createEntity(EntityManager em) {
         Projet projet = new Projet()
+            .nom(DEFAULT_NOM)
             .description(DEFAULT_DESCRIPTION)
             .photo(DEFAULT_PHOTO)
             .photoContentType(DEFAULT_PHOTO_CONTENT_TYPE)
@@ -116,6 +120,7 @@ public class ProjetResourceIT {
      */
     public static Projet createUpdatedEntity(EntityManager em) {
         Projet projet = new Projet()
+            .nom(UPDATED_NOM)
             .description(UPDATED_DESCRIPTION)
             .photo(UPDATED_PHOTO)
             .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
@@ -147,6 +152,7 @@ public class ProjetResourceIT {
         List<Projet> projetList = projetRepository.findAll();
         assertThat(projetList).hasSize(databaseSizeBeforeCreate + 1);
         Projet testProjet = projetList.get(projetList.size() - 1);
+        assertThat(testProjet.getNom()).isEqualTo(DEFAULT_NOM);
         assertThat(testProjet.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testProjet.getPhoto()).isEqualTo(DEFAULT_PHOTO);
         assertThat(testProjet.getPhotoContentType()).isEqualTo(DEFAULT_PHOTO_CONTENT_TYPE);
@@ -188,6 +194,7 @@ public class ProjetResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(projet.getId().intValue())))
+            .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM)))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
             .andExpect(jsonPath("$.[*].photoContentType").value(hasItem(DEFAULT_PHOTO_CONTENT_TYPE)))
             .andExpect(jsonPath("$.[*].photo").value(hasItem(Base64Utils.encodeToString(DEFAULT_PHOTO))))
@@ -209,6 +216,7 @@ public class ProjetResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(projet.getId().intValue()))
+            .andExpect(jsonPath("$.nom").value(DEFAULT_NOM))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
             .andExpect(jsonPath("$.photoContentType").value(DEFAULT_PHOTO_CONTENT_TYPE))
             .andExpect(jsonPath("$.photo").value(Base64Utils.encodeToString(DEFAULT_PHOTO)))
@@ -240,6 +248,7 @@ public class ProjetResourceIT {
         // Disconnect from session so that the updates on updatedProjet are not directly saved in db
         em.detach(updatedProjet);
         updatedProjet
+            .nom(UPDATED_NOM)
             .description(UPDATED_DESCRIPTION)
             .photo(UPDATED_PHOTO)
             .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
@@ -258,6 +267,7 @@ public class ProjetResourceIT {
         List<Projet> projetList = projetRepository.findAll();
         assertThat(projetList).hasSize(databaseSizeBeforeUpdate);
         Projet testProjet = projetList.get(projetList.size() - 1);
+        assertThat(testProjet.getNom()).isEqualTo(UPDATED_NOM);
         assertThat(testProjet.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testProjet.getPhoto()).isEqualTo(UPDATED_PHOTO);
         assertThat(testProjet.getPhotoContentType()).isEqualTo(UPDATED_PHOTO_CONTENT_TYPE);

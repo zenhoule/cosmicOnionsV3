@@ -3,6 +3,7 @@ package fr.inti.cosmiconions.web.rest;
 import fr.inti.cosmiconions.CosmiconionsApp;
 import fr.inti.cosmiconions.domain.Don;
 import fr.inti.cosmiconions.repository.DonRepository;
+import fr.inti.cosmiconions.repository.ProjetRepository;
 import fr.inti.cosmiconions.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -38,6 +39,9 @@ public class DonResourceIT {
 
     @Autowired
     private DonRepository donRepository;
+    
+    @Autowired
+    private ProjetRepository projetRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -61,7 +65,7 @@ public class DonResourceIT {
     @BeforeEach
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final DonResource donResource = new DonResource(donRepository);
+        final DonResource donResource = new DonResource(donRepository, projetRepository);
         this.restDonMockMvc = MockMvcBuilders.standaloneSetup(donResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)

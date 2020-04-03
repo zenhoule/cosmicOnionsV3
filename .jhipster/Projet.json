@@ -2,6 +2,10 @@
     "name": "Projet",
     "fields": [
         {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "description",
             "fieldType": "byte[]",
             "fieldTypeBlobContent": "text"

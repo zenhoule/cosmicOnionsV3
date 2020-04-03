@@ -25,6 +25,9 @@ public class Projet implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "nom")
+    private String nom;
+
     @Lob
     @Type(type = "org.hibernate.type.TextType")
     @Column(name = "description")
@@ -76,6 +79,19 @@ public class Projet implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public Projet nom(String nom) {
+        this.nom = nom;
+        return this;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getDescription() {
@@ -279,6 +295,7 @@ public class Projet implements Serializable {
     public String toString() {
         return "Projet{" +
             "id=" + getId() +
+            ", nom='" + getNom() + "'" +
             ", description='" + getDescription() + "'" +
             ", photo='" + getPhoto() + "'" +
             ", photoContentType='" + getPhotoContentType() + "'" +
