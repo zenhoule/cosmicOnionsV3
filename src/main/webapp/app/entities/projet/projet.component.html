@@ -1,4 +1,4 @@
-<div>
+<div class="bl">
     <h2 id="page-heading">
         <span jhiTranslate="cosmiconionsApp.projet.home.title">Projets</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-projet" [routerLink]="['/projet/new']">
@@ -17,7 +17,7 @@
     <div class="table-responsive" *ngIf="projets?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-            <tr>
+            <tr class="bl">
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.nom">Nom</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.description">Description</span></th>
@@ -31,7 +31,7 @@
             <th scope="col"></th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="bl">
             <tr *ngFor="let projet of projets ;trackBy: trackId">
                 <td><a [routerLink]="['/projet', projet.id, 'view' ]">{{projet.id}}</a></td>
                 <td>{{projet.nom}}</td>
