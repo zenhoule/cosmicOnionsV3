@@ -20,7 +20,7 @@ describe('Service Tests', () => {
       service = injector.get(ProjetService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Projet(0, 'AAAAAAA', 'image/png', 'AAAAAAA', 'image/png', 'AAAAAAA', 0, 0, 0);
+      elemDefault = new Projet(0, 'AAAAAAA', 'AAAAAAA', 'image/png', 'AAAAAAA', 'image/png', 'AAAAAAA', 0, 0, 0);
     });
 
     describe('Service methods', () => {
@@ -56,6 +56,7 @@ describe('Service Tests', () => {
       it('should update a Projet', () => {
         const returnedFromService = Object.assign(
           {
+            nom: 'BBBBBB',
             description: 'BBBBBB',
             photo: 'BBBBBB',
             video: 'BBBBBB',
@@ -79,6 +80,7 @@ describe('Service Tests', () => {
       it('should return a list of Projet', () => {
         const returnedFromService = Object.assign(
           {
+            nom: 'BBBBBB',
             description: 'BBBBBB',
             photo: 'BBBBBB',
             video: 'BBBBBB',

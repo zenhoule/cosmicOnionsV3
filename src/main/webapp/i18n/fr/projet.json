@@ -16,6 +16,7 @@
       "detail": {
         "title": "Projet"
       },
+      "nom": "Nom",
       "description": "Description",
       "photo": "Photo",
       "video": "Video",

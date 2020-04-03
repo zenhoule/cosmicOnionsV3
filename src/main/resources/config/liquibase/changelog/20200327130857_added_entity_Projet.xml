@@ -15,6 +15,9 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="nom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="description" type="${clobType}">
                 <constraints nullable="true" />
             </column>
@@ -68,6 +71,7 @@
                   separator=";"
                   tableName="projet">
             <column name="id" type="numeric"/>
+            <column name="nom" type="string"/>
             <column name="description" type="clob"/>
             <column name="photo" type="blob"/>
             <column name="photo_content_type" type="string"/>
