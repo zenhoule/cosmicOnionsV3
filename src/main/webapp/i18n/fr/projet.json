@@ -21,11 +21,11 @@
       "photo": "Photo",
       "video": "Video",
       "objectif": "Objectif",
-      "soldeCours": "Solde Cours",
-      "nbJoursRestant": "Nb Jours Restant",
+      "soldeCours": "Solde actuel",
+      "nbJoursRestant": "Nombre jours restant",
       "don": "Don",
       "message": "Message",
-      "user": "User",
+      "user": "Créateur",
       "categorie": "Categorie"
     }
   }
