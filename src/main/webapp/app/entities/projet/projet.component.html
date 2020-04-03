@@ -23,9 +23,9 @@
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.photo">Photo</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.video">Video</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.objectif">Objectif</span></th>
-            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.soldeCours">Solde Cours</span></th>
-            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.nbJoursRestant">Nb Jours Restant</span></th>
-            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.user">User</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.soldeCours">Solde actuel</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.nbJoursRestant">Nombre jours restant</span></th>
+            <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.user">Créateur</span></th>
             <th scope="col" ><span jhiTranslate="cosmiconionsApp.projet.categorie">Categorie</span></th>
             <th scope="col"></th>
             </tr>
@@ -48,7 +48,7 @@
                 <td>{{projet.soldeCours}}</td>
                 <td>{{projet.nbJoursRestant}}</td>
                 <td>
-                    {{projet.user?.id}}
+                    {{projet.user?.login}}
                 </td>
                 <td>
                     <div *ngIf="projet.categorie">

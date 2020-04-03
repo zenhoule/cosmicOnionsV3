@@ -1,4 +1,5 @@
 entity Projet {
+	nom String,
 		description TextBlob,
     photo ImageBlob,
 		video AnyBlob,
