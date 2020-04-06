@@ -302,6 +302,7 @@ Images
   background: url('../../content/images/ADD-goodies.png') no-repeat left;
   background-size: contain;
   padding: 0;
+  margin-top: -100px;
 }
 
 .ADD-goodies-2 {
@@ -312,6 +313,18 @@ Images
   width: 100%;
   height: 640px;
   background: url('../../content/images/ADD-goodies-2.png') no-repeat left;
+  background-size: contain;
+  padding: 0;
+}
+
+.ADD-goodies-3 {
+  position: relative;
+  z-index: 2;
+  left: 0px;
+  display: inline-block;
+  width: 100%;
+  height: 640px;
+  background: url('../../content/images/ADD-goodies-3.png') no-repeat left;
   background-size: contain;
   padding: 0;
   margin-top: -100px;
@@ -326,7 +339,7 @@ Images
   height: 200px;
   background: url('../../content/images/zainoul.jpg') no-repeat left;
   background-size: contain;
-  padding: 0;
+  padding: 50px;
   margin-right: 50px;
   margin-left: 50px;
 }
@@ -339,7 +352,7 @@ Images
   height: 200px;
   background: url('../../content/images/chloe.jpg') no-repeat left;
   background-size: contain;
-  padding: 0;
+  padding: 50px;
   margin-right: 50px;
   margin-left: 50px;
 }
@@ -353,7 +366,7 @@ Images
   height: 200px;
   background: url('../../content/images/hugo.jpg') no-repeat left;
   background-size: contain;
-  padding: 0;
+  padding: 50px;
   margin-right: 50px;
   margin-left: 50px;
 }
@@ -367,7 +380,7 @@ Images
   height: 200px;
   background: url('../../content/images/elisa.jpg') no-repeat left;
   background-size: contain;
-  padding: 0;
+  padding: 50px;
   margin-right: 50px;
   margin-left: 50px;
 }
@@ -381,7 +394,7 @@ Images
   height: 200px;
   background: url('../../content/images/thibault.jpg') no-repeat left;
   background-size: contain;
-  padding: 0;
+  padding: 50px;
   margin-right: 50px;
   margin-left: 50px;
 }
